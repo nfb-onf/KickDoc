@@ -32,6 +32,11 @@ html lang="en"
           .navbar-collapse.collapse.navbar-responsive-collapse
 
             ul.nav.navbar-nav.navbar-right
+              li= link_to "Choose", documentaries_path
+              li= link_to "Fund", documentaries_path(:type => :fund)
+              li= link_to "Launch", new_documentary_path
+              li= link_to "Watch", "/path3"
+              li= link_to "How it works", "/path3"
               li
                 form.navbar-form.navbar-left role="search"
                   .form-group
@@ -55,9 +60,9 @@ html lang="en"
         .col-lg-3
           .well.sidebar-nav
             ul.nav.nav-pills.nav-stacked
-              - @categories.each do |category|
-                li class="#{ params[:category] == category ? "active" : nil }"
-                  = link_to category.humanize, "?category=%s" % category
+              - all_genres.each do |genre|
+                li class="#{ params[:genre] == genre.title.underscore ? "active" : nil }"
+                  = link_to genre.title.humanize, "?genre=%s" % genre.title
 
       footer
         p &copy; Company 2015
