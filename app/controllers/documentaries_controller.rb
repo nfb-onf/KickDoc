@@ -1,6 +1,6 @@
 class DocumentariesController < ApplicationController
   def index
-    @documentaries = Documentaries.all
+    @documentaries = Documentary.all
   end
 
   def new
