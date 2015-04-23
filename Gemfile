@@ -38,6 +38,9 @@ gem 'slim-rails', '~> 3.0.1'        # Slim html template
 gem 'kaminari', '~> 0.16.3'         # Pagination
 gem 'carrierwave', '~> 0.10.0'      # File uploads for Rails
 
+gem "therubyracer", '~> 0.12.2'
+gem "less-rails", '~> 2.7.0' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails", '~> 3.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
