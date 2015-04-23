@@ -1,1 +1,8 @@
 language: ruby
+deploy:
+  provider: heroku
+  api_key:
+    secure: HM4sB4ymA7jFb4qFWaRYJkBT/lPnx+oNNnde/UEIAGIzKLEBXYR61fN+6z13dMitVkXmRC/vqJu6uyFDZuwBZyy6NCKxUGErtj6/gmqrI+rLTvWuYl5RbxWMDSrB8G9OiICCznjazMmNOy/NmaktwjyjKyPwXNBWlWjPfNEvs90=
+  app: agile-shore-3585
+  on:
+    repo: nfb-onf/KickDoc
