@@ -9,4 +9,4 @@ deploy:
 notifications:
   hipchat:
     rooms:
-      secure: VT5+7Qt+PLVQ5vfLCJCvJTVPwifq/D3W56V3w5X9I3zqQAqUnnQVuHwD7VrfnVJ1iEoVRwHIDlvCiPNJ2hCzBAEFZX96UQLvAZxLtDklGiTw+estF0P5S2/hbQ5KvjTGjNuXtMmBQWXiuIglgzweFJvVp4kglrSdODntkJdIyME=
+      secure: IIO1bdX/uO3/50QQLmRgJZ0y5ZKufYK/gDyf72llL/FwhMDUcL55q/YuJRI+1AZ+A5cxZy7jHr5c4xCMOHUBsmYd1VOQSTyWSO1gcCcUGbRuyw0bzLNx524HdlB2CRMYtvHst41esZ9om3HB552ddTJSUKKS+28xP6Nbpl+iNcA=
