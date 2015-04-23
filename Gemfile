@@ -43,6 +43,7 @@ gem "less-rails", '~> 2.7.0' #Sprockets (what Rails 3.1 uses for its asset pipel
 gem "twitter-bootstrap-rails", '~> 3.2.0'
 
 gem 'faker', '~> 1.4.3'       # Fake data
+gem 'image_suckr', '~> 0.2.0' # Random images from the web
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
