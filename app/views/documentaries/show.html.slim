@@ -1,0 +1,20 @@
+h1
+  | Documentary#Show
+
+.page-header
+  h1 #{@documentary.title}
+  hr style="color:black" size=30
+  .embed-responsive.embed-responsive-16by9
+    iframe.embed-responsive-item src="https://www.nfb.ca/film/age_is_no_barrier/embed/player" width="516"
+  p = @documentary.short_synopsis
+  br
+
+ul.nav.nav-tabs
+  li.active role="presentation" = link_to "Whishlist"
+  li role="presentation" = link_to "Details"
+  li role="presentation" = link_to "Blog"
+  li role="presentation" = link_to "Team"
+  li role="presentation" = link_to "Backers"
+
+p
+  | Find me in app/views/choose_documentary/_choose.html.slim
