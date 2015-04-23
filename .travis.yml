@@ -6,3 +6,7 @@ deploy:
   app: agile-shore-3585
   on:
     repo: nfb-onf/KickDoc
+notifications:
+  hipchat:
+    rooms:
+      secure: VT5+7Qt+PLVQ5vfLCJCvJTVPwifq/D3W56V3w5X9I3zqQAqUnnQVuHwD7VrfnVJ1iEoVRwHIDlvCiPNJ2hCzBAEFZX96UQLvAZxLtDklGiTw+estF0P5S2/hbQ5KvjTGjNuXtMmBQWXiuIglgzweFJvVp4kglrSdODntkJdIyME=
