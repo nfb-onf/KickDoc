@@ -7,6 +7,8 @@ end
 
 @genres = Genre.all
 
+suckr = ImageSuckr::GoogleSuckr.new
+
 (1..5).each do
   Documentary.create(
     :title => Faker::Lorem.sentence(3),
@@ -20,7 +22,7 @@ end
     :city => Faker::Address.city,
     :budget => rand(10000..500000),
     :purpose => Faker::Lorem.paragraph(3),
-    :thumbnail_url => "",
+    :thumbnail_url => suckr.get_image_url,
     :pitch_video_url => ""
   )
 end
