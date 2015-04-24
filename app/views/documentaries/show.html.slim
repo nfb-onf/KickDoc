@@ -1,12 +1,17 @@
 h1
-  | Documentary#Show
+  = @documentary.title
+
+.row
+  .col-xs-2
+    = facebook_button
+  .col-xs-2
+    = twitter_button
 
 .page-header
-  h1 #{@documentary.title}
   hr style="color:black" size=30
   .embed-responsive.embed-responsive-16by9
-    iframe.embed-responsive-item src="https://www.nfb.ca/film/age_is_no_barrier/embed/player" width="516"
-  p = @documentary.short_synopsis
+    iframe.embed-responsive-item src="#{@documentary.pitch_video_url}" width="516"
+  p = @documentary.long_synopsis
   br
   .vote
     a class="fa fa-heart fa-heart-o"  Vote

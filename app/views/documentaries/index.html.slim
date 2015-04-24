@@ -1,19 +1,50 @@
 h1
   | Projects
 
-.row
-  - @documentaries.each do |documentary|
-    .col-xs-6.col-md-3
-      .thumbnail = link_to(image_tag(documentary.thumbnail_url, :size => "242x220"), documentary_path(documentary.id))
-      .caption
-      .h3 = documentary.title
-      p = documentary.short_synopsis
-      p
-        .i.fa.fa-user = documentary.creator
-        .i.fa.fa-hand-o-up = documentary.backers
-        .i.fa.fa-clock-o = documentary.expired_at
-        .progress
-          .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{documentary.percent_funded}%;"
-            = "%s %" % documentary.percent_funded
 
+ul.nav.nav-tabs
+  li role="presentation" class="#{ is_active?(params[:type], :new) }"
+    = link_to type: :new do
+      | New Projects
+  li role="presentation" class="#{ is_active?(params[:type], :approved) }"
+    = link_to type: :approved, status: params[:status] do
+      | ONF/NFB Approved
+  li role="presentation" class="#{ is_active?(params[:type], :top) }"
+    = link_to type: :top, status: params[:status] do
+      | Top likes
+  li role="presentation" class="#{ is_active?(params[:type], :completed) }"
+    = link_to type: :completed, status: params[:status] do
+      | Completed
 
+br
+
+- @documentaries.each do |documentary|
+  .panel.panel-default
+    .panel-heading
+      = documentary.title
+    .panel-body
+      .row
+        .col-xs-2
+          .thumbnail
+            = link_to(image_tag(documentary.thumbnail_url, :size => "121x110"), documentary_path(documentary.id))
+        .col-xs-8
+          = documentary.short_synopsis
+        .col-xs-2
+          p.bg-success.text-center
+            = documentary.genres.map(&:title).first.humanize
+    .panel-footer
+      .row
+        .col-xs-4
+          .i.fa.fa-user
+            = documentary.creator
+        .col-xs-6
+          .i.fa.fa-hand-o-up
+            = "%s likes" % documentary.backers
+        .col-xs-2
+          .i.fa.fa-clock-o
+            = documentary.expired_at.strftime("%B %d, %Y")
+      .row
+        .col-xs-12
+          .progress
+            .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{documentary.percent_funded}%;"
+              = "%s %" % documentary.percent_funded
