@@ -9,7 +9,7 @@ end
 
 suckr = ImageSuckr::GoogleSuckr.new
 
-(1..5).each do
+(1..20).each do
   Documentary.create(
     :title => Faker::Lorem.sentence(3),
     :genres => [@genres[rand(@genres.count)]],
