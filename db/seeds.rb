@@ -23,6 +23,7 @@ suckr = ImageSuckr::GoogleSuckr.new
     :budget => rand(10000..500000),
     :purpose => Faker::Lorem.paragraph(3),
     :thumbnail_url => suckr.get_image_url,
-    :pitch_video_url => ""
+    :pitch_video_url => "",
+    :approved => [true, false].sample
   )
 end
