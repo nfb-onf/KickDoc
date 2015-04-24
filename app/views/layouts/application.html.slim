@@ -35,7 +35,7 @@ html lang="en"
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav.navbar-right
               li= link_to "Choose", documentaries_path
-              li= link_to "Fund", documentaries_path(:type => :fund)
+              li= link_to "Fund", documentaries_path(:status => :fund)
               li= link_to "Launch", new_documentary_path
               li= link_to "Watch", "/path3"
               li= link_to "How it works", "/path3"
@@ -76,7 +76,7 @@ html lang="en"
             ul.nav.nav-pills.nav-stacked
               - all_genres.each do |genre|
                 li class="#{ params[:genre] == genre.title.underscore ? "active" : nil }"
-                  = link_to genre.title.humanize, genre: genre.title, type: params[:type]
+                  = link_to genre.title.humanize, genre: genre.title, type: params[:type], status: params[:status]
 
       footer
         p &copy; NFB/ONF 2015

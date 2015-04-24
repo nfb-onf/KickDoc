@@ -1,8 +1,9 @@
 class DocumentariesController < ApplicationController
   def index
-    params[:type] = :new if not params[:type]
+    params[:status] ||= :new
+    params[:type] ||= :new
 
-    @documentaries = Documentary.includes(:genres)
+    @documentaries = Documentary.includes(:genres).where(status: params[:status].to_s)
 
     @documentaries = case params[:type].to_sym
     when :new
@@ -12,7 +13,9 @@ class DocumentariesController < ApplicationController
     when :top
       @documentaries.order(backers: :desc)
     when :completed
-      @documentaries.where(percent_funded: 100)
+      @documentaries.where(status: 100)
+    else
+      @documentaries.order(created_at: :desc)
     end
 
     @documentaries = @documentaries.where(genres: {title: params[:genre]}) if params[:genre]
@@ -23,7 +26,6 @@ class DocumentariesController < ApplicationController
   end
 
   def create
-    # raise params
     @documentary = Documentary.create(documentary_params)
     redirect_to documentary_path(@documentary.id)
   end

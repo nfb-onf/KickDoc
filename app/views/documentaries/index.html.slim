@@ -4,16 +4,16 @@ h1
 
 ul.nav.nav-tabs
   li role="presentation" class="#{ is_active?(params[:type], :new) }"
-    = link_to documentaries_path(type: :new) do
+    = link_to type: :new do
       | New Projects
   li role="presentation" class="#{ is_active?(params[:type], :approved) }"
-    = link_to documentaries_path(type: :approved) do
+    = link_to type: :approved, status: params[:status] do
       | ONF/NFB Approved
   li role="presentation" class="#{ is_active?(params[:type], :top) }"
-    = link_to documentaries_path(type: :top) do
+    = link_to type: :top, status: params[:status] do
       | Top likes
   li role="presentation" class="#{ is_active?(params[:type], :completed) }"
-    = link_to documentaries_path(type: :completed) do
+    = link_to type: :completed, status: params[:status] do
       | Completed
 
 br
@@ -30,7 +30,8 @@ br
         .col-xs-8
           = documentary.short_synopsis
         .col-xs-2
-          = documentary.genres.map(&:title).first.humanize
+          p.bg-success.text-center
+            = documentary.genres.map(&:title).first.humanize
     .panel-footer
       .row
         .col-xs-4
