@@ -13,8 +13,8 @@ suckr = ImageSuckr::GoogleSuckr.new
   Documentary.create(
     :title => Faker::Lorem.sentence(3),
     :genres => [@genres[rand(@genres.count)]],
-    :short_synopsis => Faker::Lorem.paragraph,
-    :long_synopsis => Faker::Lorem.paragraph(3),
+    :short_synopsis => Faker::Lorem.paragraph(3),
+    :long_synopsis => Faker::Lorem.paragraph(30),
     :backers => rand(200),
     :expired_at => DateTime.now + 30,
     :creator => Faker::Name.name,
@@ -23,7 +23,7 @@ suckr = ImageSuckr::GoogleSuckr.new
     :budget => rand(10000..500000),
     :purpose => Faker::Lorem.paragraph(3),
     :thumbnail_url => suckr.get_image_url,
-    :pitch_video_url => "",
+    :pitch_video_url => "https://www.nfb.ca/film/age_is_no_barrier/embed/player",
     :approved => [true, false].sample,
     :status => [:new, :fund, :completed].sample
   )
