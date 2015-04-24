@@ -19,3 +19,9 @@
 $(".vote a").click(function () {
     $(this).toggleClass("fa-heart-o");
 });
+
+$('.nav-tabs a').click(function (e) {
+    console.log("clicked");
+    e.preventDefault()
+    $(this).tab('show')
+});

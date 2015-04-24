@@ -16,12 +16,131 @@ h1
   .vote
     a class="fa fa-heart fa-heart-o"  Vote
 
-ul.nav.nav-tabs
-  li.active role="presentation" = link_to "Whishlist"
-  li role="presentation" = link_to "Details"
-  li role="presentation" = link_to "Blog"
-  li role="presentation" = link_to "Team"
-  li role="presentation" = link_to "Backers"
 
-p
-  | Find me in app/views/choose_documentary/_choose.html.slim
+div role="tabpanel"
+  ul.nav.nav-tabs role="tablist"
+    li.active role="presentation"
+      = link_to "Wishlist", "#wishlist", role:"tab"
+    li role="presentation"
+      = link_to "Details", "#details", role:"tab"
+    li role="presentation"
+      = link_to "Blog", "#blog", role:"tab"
+    li role="presentation"
+      = link_to "Team", "#team", role:"tab"
+    li role="presentation"
+      = link_to "Backers", "#backers", role:"tab"
+
+  div.tab-content
+    div role="tabpanel" class="tab-pane active" id="wishlist"
+      h3 Wishlist
+      h4 Catering
+      table
+        tr
+          td Muffins
+          td $10.99/each
+        tr
+          td Oranges
+          td $3874/each
+      h4 Cameras and Lighting
+      tr
+        td Red ONE Camera
+        td $278/day
+
+    div role="tabpanel" class="tab-pane" id="details"
+      h3 Details
+      h4 Synopsis
+      p Phasellus suscipit rutrum luctus. Mauris iaculis porttitor eros. Maecenas commodo facilisis tellus at convallis. Ut venenatis odio sit amet diam aliquam vulputate. Duis iaculis bibendum libero eu scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sed lectus mi.
+      p Nunc et mauris iaculis, mattis erat eget, dictum elit. Integer id massa convallis urna tempor vestibulum in eu tellus. Fusce eu sem iaculis ipsum egestas imperdiet id et nunc. Etiam bibendum risus quam, a vulputate est tempor nec. In sit amet tristique urna. Vivamus elit augue, dapibus id purus eget, tempor vestibulum ante. Vivamus vulputate dictum purus ac consectetur. Nullam sollicitudin rutrum fringilla. Phasellus maximus metus ut odio vulputate, in mollis tellus commodo. Integer aliquet sollicitudin maximus. In ornare, purus vel ullamcorper bibendum, nunc nisl blandit lacus, ac consequat elit nibh in ante. Donec viverra eros sed arcu placerat tempus.
+      p Vestibulum congue vel turpis eget posuere. Proin mattis est ut eros malesuada, eu consequat tortor malesuada. Ut purus metus, consectetur ac vestibulum in, fermentum quis felis. Proin non quam non felis suscipit aliquet. Nulla dapibus urna vel sem feugiat vestibulum.
+      h4 Schedule
+      p Today + Tomorrow
+      h4 Distribution Plan
+      p Ut ullamcorper at odio in ullamcorper. Mauris eleifend dictum tristique. Etiam gravida justo vel mauris accumsan, sed condimentum nibh imperdiet. Nullam ac lacinia leo. Pellentesque convallis, arcu non luctus pretium, sapien turpis porta nunc, nec imperdiet arcu nulla iaculis nisl. Nulla laoreet diam ut velit mattis, quis tristique purus hendrerit. Nunc euismod pulvinar vestibulum. Quisque bibendum lectus quis accumsan auctor. In a nulla eu velit malesuada efficitur in ac augue. Morbi semper neque sit amet risus porta, vitae cursus urna sagittis. Aliquam rutrum velit quis ex facilisis pellentesque.
+      p Maecenas commodo facilisis tellus at convallis. Ut venenatis odio sit amet diam aliquam vulputate.
+      p Quisque eu neque eu nibh efficitur tempor ut id nulla. Sed elementum, mi at porttitor vulputate, arcu metus ultrices lacus, in rhoncus elit orci quis orci. Vestibulum laoreet urna diam, at sagittis risus pretium vitae. Donec eget feugiat mi. Morbi posuere nulla sem, a placerat arcu commodo ultrices. Nullam nec sollicitudin mi, quis laoreet sem. Vivamus egestas nisl purus, semper maximus turpis aliquet vel. Donec et molestie quam. Quisque ac nibh sed risus pretium posuere. Ut id vehicula libero. Mauris posuere nulla eget lorem condimentum euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non pellentesque urna. Praesent consectetur lectus in sapien molestie, sit amet varius risus tincidunt.
+      h4 Logline
+      p Vestibulum at aliquet risus.
+    div role="tabpanel" class="tab-pane" id="blog"
+      h3
+        | Nearing the Half-Way Mark!
+        small
+          |  April 24, 2015
+      p
+        | Updated by
+        a
+          |  Oompa-Loompa
+      p Nulla facilisi. Phasellus pharetra et neque id placerat. Aenean ultrices dui augue, a luctus velit efficitur in. Curabitur vulputate, odio vel convallis feugiat, mi quam elementum nibh, eu porttitor dolor leo a quam. Cras ornare sem sapien. Donec velit diam, convallis quis eleifend ultrices, consectetur non enim. Sed pharetra ac nisl sed porta. Phasellus lorem nunc, bibendum sed fringilla vitae, convallis eu sapien. Duis semper sapien elit, et egestas velit fermentum ut. Sed in dictum odio. Etiam consectetur, quam vel sagittis sollicitudin, justo lectus lobortis arcu, at interdum ante metus aliquet est. Pellentesque elementum, turpis vitae laoreet vulputate, massa eros molestie quam, fermentum dignissim tortor risus eget nisi. Vestibulum ut hendrerit dolor, id porta mauris. Proin condimentum tortor in consequat dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse eleifend risus id viverra vulputate.
+      p Etiam id scelerisque nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat, nisl a viverra egestas, lorem ipsum eleifend tellus, a pellentesque nulla tellus sed tortor. Sed condimentum at sapien a gravida. Fusce at faucibus metus. Vivamus a orci massa. Proin ultricies lectus quis ante porta, vel aliquam elit semper. Vivamus sed condimentum augue, ut scelerisque tellus. Phasellus dictum ex id ligula tempus venenatis. Nam et purus in nunc venenatis hendrerit a eu leo. Quisque aliquet lectus consectetur, consequat quam ac, eleifend lectus. Maecenas in blandit diam, nec tempus metus. Nullam pretium est vel quam dictum, a gravida neque pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum id neque congue, commodo ante vitae, consectetur augue. Nullam et cursus orci, non tempus purus.
+      hr
+      h3
+        | First Hour Success!
+        small
+          |  April 24, 2015
+      p
+        | Updated by
+        a
+          |  ZeegoDoo
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula at augue congue efficitur. Integer quis ultricies orci. Nullam vulputate efficitur dui. Proin tincidunt orci ut augue mollis, dictum tincidunt eros sagittis. Quisque condimentum dui lorem. Vestibulum id neque urna. Donec varius gravida nisi vel porttitor.
+      p Sed nisl dui, bibendum non rhoncus a, consequat id ligula. Etiam tempus tellus ut velit feugiat tempus. Sed ultricies tellus eget elementum pretium. In quis varius lorem. Pellentesque laoreet sit amet metus id rutrum. Duis vel vehicula leo. Nullam volutpat sapien eget venenatis porttitor. Curabitur eget egestas diam. Maecenas fringilla neque id eros sodales, sed blandit quam faucibus.
+      hr
+      h3
+        | Launch Day!
+        small
+          |  April 24, 2015
+      p
+        | Updated by
+        a
+          |  Muahaha
+      p Morbi posuere nulla sem, a placerat arcu commodo ultrices. Nullam nec sollicitudin mi, quis laoreet sem. Vivamus egestas nisl purus, semper maximus turpis aliquet vel. Donec et molestie quam. Quisque ac nibh sed risus pretium posuere. Ut id vehicula libero. Mauris posuere nulla eget lorem condimentum euismod.
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non pellentesque urna. Praesent consectetur lectus in sapien molestie, sit amet varius risus tincidunt. Vestibulum at aliquet risus.
+
+    div role="tabpanel" class="tab-pane" id="team"
+      h3 Team
+      h4 About this team
+      p Integer non massa mattis, feugiat turpis eu, tempor dui. Donec cursus leo turpis, vitae tempus dui efficitur eget. Pellentesque molestie orci ac tortor blandit blandit. Fusce ut faucibus nunc. Nulla a leo turpis. Vestibulum nec ex consequat, interdum arcu hendrerit, elementum sem.
+      hr
+      h4
+        | Muahaha
+        small  Director
+      img class="pull-left" style="margin-right:18px" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"
+      p Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer arcu velit, tincidunt accumsan rutrum ac, dapibus eu orci. Phasellus dapibus erat quis faucibus pretium. Sed ornare auctor augue ac tincidunt. Integer non massa mattis, feugiat turpis eu, tempor dui. Donec cursus leo turpis, vitae tempus dui efficitur eget. Pellentesque molestie orci ac tortor blandit blandit. Fusce ut faucibus nunc. Nulla a leo turpis. Vestibulum nec ex consequat, interdum arcu hendrerit, elementum sem. Nullam velit dolor, porttitor id nisi non, sollicitudin mattis neque. In luctus ligula tellus, at vulputate ante maximus et. Phasellus condimentum arcu a enim vestibulum porttitor. Nam in tempor tellus. Sed non maximus nunc, et pretium dui.
+      br
+      h4
+        | Oompa-Loompa
+        small  Producer
+      img class="pull-left" style="margin-right:18px" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"
+      p Proin nulla ante, commodo ac odio ac, consectetur maximus dolor. Mauris consequat mi sed elit tempus aliquam. Suspendisse malesuada risus ac dolor luctus, a vulputate tortor convallis. Duis ac pulvinar risus. Mauris semper dolor ut nisl dapibus, vel euismod metus porttitor. Duis malesuada mauris lacus, sed sollicitudin mauris mollis et. Ut ex nulla, eleifend ac tempor ac, venenatis vitae odio. Phasellus nec quam vel lorem mollis gravida. Proin ex diam, dictum id dignissim in, tempus non elit. Aliquam fermentum, diam a aliquam finibus, nibh libero euismod lacus, et porta dolor libero a lorem. Cras nec nibh est. Aenean eget lacinia mi, vitae finibus libero.
+      br
+      h4
+        | ZeegoDoo
+        small  Marketing
+      img class="pull-left" style="margin-right:18px" src="http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"
+      p Curabitur suscipit sapien eu elit ornare, eu consectetur mi scelerisque. Praesent interdum scelerisque sem in fermentum. Mauris feugiat eget risus ac commodo. Morbi gravida volutpat nisl, in luctus nunc interdum a. Phasellus nisl purus, ultricies ac neque eu, bibendum dapibus eros. Nam sagittis aliquet porttitor. In massa ex, dictum sit amet gravida sit amet, dapibus et dolor. Pellentesque eget ante vel nunc sodales vestibulum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus at nunc dignissim, suscipit neque nec, tempor felis. Curabitur vel suscipit arcu. Aliquam fringilla ipsum magna, aliquet consequat quam hendrerit id. Praesent nec orci sed ipsum finibus tempor.
+      br
+    div role="tabpanel" class="tab-pane" id="backers"
+      h3 Backers
+      ul#backers
+        li
+          img.pull-left src=@avatar
+          span.h4  Oompa-Loompa
+          p  Helped with a cash funding of $13, April 24, 2015
+        li
+          img.pull-left src=@avatar
+          span.h4  Echego
+          p  Helped with a cash funding of $87,383, April 24, 2015
+        li
+          img.pull-left src=@avatar
+          span.h4  Reginald
+          p  Helped fund 17 canaries, April 24, 2015
+        li
+          img.pull-left src=@avatar
+          span.h4  Rasha
+          p  Helped fund 1 blue tiger and with a cash funding of $1, April 24, 2015
+        li
+          img.pull-left src=@avatar
+          span.h4  Gary Oldman
+          p  Helped with a cash funding of $134, April 24, 2015
+        li
+          img.pull-left src=@avatar
+          span.h4  Harry Potter
+          p  Helped fund 1 magical wand, April 24, 2015
