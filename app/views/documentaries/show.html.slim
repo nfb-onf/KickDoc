@@ -10,13 +10,21 @@ h1
     = facebook_button
   .col-xs-2
     = twitter_button
+  .col-xs-8
+    .h3.pull-right
+      span.label.label-default = @documentary.genres.map(&:title).first.humanize
 
 .page-header
   hr style="color:black" size=30
   .embed-responsive.embed-responsive-16by9
     iframe.embed-responsive-item src="#{@documentary.pitch_video_url}" width="516"
+  hr
   p = @documentary.long_synopsis
-  br
+  hr
+  h3 Progress
+  .progress
+    .progress-bar role="progressbar" aria-valuenow=@documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{@documentary.percent_funded}%;"
+      = "%s %" % @documentary.percent_funded
 
 div role="tabpanel"
   ul.nav.nav-tabs.js role="tablist"
