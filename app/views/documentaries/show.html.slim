@@ -33,18 +33,25 @@ div role="tabpanel"
   div.tab-content
     div role="tabpanel" class="tab-pane active" id="wishlist"
       h3 Wishlist
-      h4 Catering
       table
         tr
-          td Muffins
-          td $10.99/each
-        tr
-          td Oranges
-          td $3874/each
-      h4 Cameras and Lighting
-      tr
-        td Red ONE Camera
-        td $278/day
+          td
+            h4 Storage
+        tr.wishlist-item
+          td
+            img src=@item_image
+          td.wishlist-item-info
+            div.wishlist-item-name Extra Super Awesome Hard Drive
+            div.wishlist-item-description Integer aliquet sollicitudin maximus. In ornare, purus vel ullamcorper bibendum, nunc nisl blandit lacus, ac consequat elit nibh in ante. Donec viverra eros sed arcu placerat tempus.
+          td 150$ per unit
+          td
+            | 1 of 1
+            br fulfilled
+          td
+            select
+              option 1
+          td
+            button.btn.btn-success.disabled Fulfilled
 
     div role="tabpanel" class="tab-pane" id="details"
       h3 Details
