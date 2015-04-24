@@ -11,9 +11,11 @@
   h3
     | My Timeline
 
-  - @my_documentaries.each do |documentary|
+  - @my_documentaries.each_with_index do |documentary, index|
     .panel.panel-default
       .panel-heading
+        .pull-right
+          = (DateTime.now - index).strftime("%B %d, %Y")
         h1
           = documentary.title
       .panel-body
