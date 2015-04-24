@@ -13,7 +13,7 @@ class DocumentariesController < ApplicationController
     when :top
       @documentaries.order(backers: :desc)
     when :completed
-      @documentaries.where(status: 100)
+      @documentaries.where(percent_funded: 100)
     else
       @documentaries.order(created_at: :desc)
     end
