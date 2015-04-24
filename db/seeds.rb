@@ -24,6 +24,7 @@ suckr = ImageSuckr::GoogleSuckr.new
     :purpose => Faker::Lorem.paragraph(3),
     :thumbnail_url => suckr.get_image_url,
     :pitch_video_url => "",
-    :approved => [true, false].sample
+    :approved => [true, false].sample,
+    :status => [:new, :fund, :completed].sample
   )
 end
