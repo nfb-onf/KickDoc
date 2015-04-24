@@ -5,7 +5,7 @@ h1
   h1 #{@documentary.title}
   hr style="color:black" size=30
   .embed-responsive.embed-responsive-16by9
-    iframe.embed-responsive-item src="https://www.nfb.ca/film/age_is_no_barrier/embed/player" width="516"
+    iframe.embed-responsive-item src="#{@documentary.pitch_video_url}" width="516"
   p = @documentary.short_synopsis
   br
   .vote
