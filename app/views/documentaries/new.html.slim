@@ -1,0 +1,21 @@
+/= form_for  @documentary  do |f|
+/  .input-group
+/    span.input-group-addon id="title"
+/      | Film Title
+/    input.form-control placeholder="The title of your film" = f.text_field :title
+
+
+= simple_form_for(@documentary, html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form,
+  ) do |form|
+    = form.error_notification
+    = form.input :title, placeholder: 'The title of your documentary'
+    = form.input :short_synopsis, as: :text, placeholder: 'A short synopsis of your documentary'
+    = form.input :long_synopsis , as: :text, placeholder: 'THE synopsis of your documentary'
+    = form.input :expired_at, as: :date
+    = form.input :city, placeholder: 'The city of the shooting'
+    = form.input :budget, hint: 'This is the place where you put how much monet do you need to bring your project to life'
+    = form.input :purpose, as: :text, placeholder: 'The place to write why should the canayan citizen support your project'
+    = form.input :thumbnail_url, as: :url, hint: 'The url to the image of your project'
+    = form.input :pitch_video_url, as: :url, hint: 'The url to your pitch video (must be in embed format ex)'
+    = form.button :submit, :class => "btn btn-primary"
