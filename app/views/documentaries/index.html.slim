@@ -38,8 +38,8 @@ br
           .i.fa.fa-user
             = documentary.creator
         .col-xs-6
-          .i.fa.fa-hand-o-up
-            = "%s likes" % documentary.backers
+          .i.fa.fa-heart
+            = "%s" % documentary.backers
         .col-xs-2
           .i.fa.fa-clock-o
             = documentary.expired_at.strftime("%B %d, %Y")
