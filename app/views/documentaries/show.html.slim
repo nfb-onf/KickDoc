@@ -1,5 +1,9 @@
 h1
-  = @documentary.title
+  = @documentary.title 
+  small.pull-right.vote
+    | &nbsp;
+    a class="fa fa-heart fa-heart-o"
+      |  I like this project
 
 .row
   .col-xs-2
@@ -13,8 +17,6 @@ h1
     iframe.embed-responsive-item src="#{@documentary.pitch_video_url}" width="516"
   p = @documentary.long_synopsis
   br
-  .vote
-    a class="fa fa-heart fa-heart-o"  Vote
 
 div role="tabpanel"
   ul.nav.nav-tabs.js role="tablist"
