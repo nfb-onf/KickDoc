@@ -15,3 +15,7 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(".vote a").click(function () {
+    $(this).toggleClass("fa-heart-o");
+});
