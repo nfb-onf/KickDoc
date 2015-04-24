@@ -10,6 +10,9 @@ h1
     = facebook_button
   .col-xs-2
     = twitter_button
+  .col-xs-8
+    .h3.pull-right
+      span.label.label-default = @documentary.genres.map(&:title).first.humanize
 
 .page-header
   hr style="color:black" size=30
