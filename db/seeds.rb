@@ -37,7 +37,7 @@ Documentary.create(
     :backers => rand(200),
     :expired_at => DateTime.now + 30,
     :creator => Faker::Name.name,
-    :percent_funded => 100,
+    :percent_funded => 99,
     :city => Faker::Address.city,
     :budget => rand(10000..500000),
     :purpose => "To give voice to the hackers",
