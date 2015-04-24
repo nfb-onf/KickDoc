@@ -1,7 +1,41 @@
-h1
-  | Welcome to KickDoc
-.lead
-  p
-    | KickDoc is a new way to get involved in what National Film Board of Canada produce.
-  p
-    | Because our source of inspiration has always been our people, canadian citizen have the power to choose what they will love to watch.
+- if @my_documentaries.blank?
+  .lead
+    p
+      | KickDoc is a new way to get involved in what National Film Board of Canada produce.
+    p
+      | Because our source of inspiration has always been our people, canadian citizen have the power to choose what they will love to watch.
+- else
+  h1
+    | Welcome to KickDoc
+
+  h3
+    | My Timeline
+
+  - @my_documentaries.each do |documentary|
+    .panel.panel-default
+      .panel-heading
+        h1
+          = documentary.title
+      .panel-body
+        .row
+          .col-xs-2
+            .thumbnail
+              = link_to(image_tag(documentary.thumbnail_url, :size => "121x110"), documentary_path(documentary.id))
+          .col-xs-8
+            | Continue to vote for him !!!!!
+      .panel-footer
+        .row
+          .col-xs-4
+            .i.fa.fa-user
+              = documentary.creator
+          .col-xs-6
+            .i.fa.fa-heart
+              = "%s" % documentary.backers
+          .col-xs-2
+            .i.fa.fa-clock-o
+              = documentary.expired_at.strftime("%B %d, %Y")
+        .row
+          .col-xs-12
+            .progress
+              .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{documentary.percent_funded}%;"
+                = "%s %" % documentary.percent_funded
