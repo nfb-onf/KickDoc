@@ -7,21 +7,33 @@ h1
 
 .row
   .col-xs-2
+    span
+      | Created by: 
+      a href="#" = @documentary.creator
+    br
+    br
+
+.row
+  .col-xs-2
     = facebook_button
   .col-xs-2
     = twitter_button
   .col-xs-8
     .h3.pull-right
-      span.label.label-default = @documentary.genres.map(&:title).first.humanize
+      span.label.label-default = @documentary.city
+      span &nbsp;
+      span.label.label-primary = @documentary.genres.map(&:title).first.humanize
 
 .page-header
   hr style="color:black" size=30
   .embed-responsive.embed-responsive-16by9
     iframe.embed-responsive-item src="#{@documentary.pitch_video_url}" width="516"
   hr
+  h3 Synopsis
   p = @documentary.long_synopsis
   hr
-  h3 Progress
+  h3 Budget & Progress
+  div = "Final budget %s" % number_to_currency(@documentary.budget)
   .progress
     .progress-bar role="progressbar" aria-valuenow=@documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{@documentary.percent_funded}%;"
       = "%s %" % @documentary.percent_funded
@@ -68,6 +80,8 @@ div role="tabpanel"
 
     div role="tabpanel" class="tab-pane" id="details"
       h3 Details
+      h4 Location
+      p = @documentary.city
       h4 Synopsis
       p Phasellus suscipit rutrum luctus. Mauris iaculis porttitor eros. Maecenas commodo facilisis tellus at convallis. Ut venenatis odio sit amet diam aliquam vulputate. Duis iaculis bibendum libero eu scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sed lectus mi.
       p Nunc et mauris iaculis, mattis erat eget, dictum elit. Integer id massa convallis urna tempor vestibulum in eu tellus. Fusce eu sem iaculis ipsum egestas imperdiet id et nunc. Etiam bibendum risus quam, a vulputate est tempor nec. In sit amet tristique urna. Vivamus elit augue, dapibus id purus eget, tempor vestibulum ante. Vivamus vulputate dictum purus ac consectetur. Nullam sollicitudin rutrum fringilla. Phasellus maximus metus ut odio vulputate, in mollis tellus commodo. Integer aliquet sollicitudin maximus. In ornare, purus vel ullamcorper bibendum, nunc nisl blandit lacus, ac consequat elit nibh in ante. Donec viverra eros sed arcu placerat tempus.
