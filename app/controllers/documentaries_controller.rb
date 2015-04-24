@@ -2,16 +2,20 @@ class DocumentariesController < ApplicationController
   def index
     params[:type] = :new if not params[:type]
 
+    @documentaries = Documentary.includes(:genres)
+
     @documentaries = case params[:type].to_sym
     when :new
-      Documentary.order(created_at: :desc)
+      @documentaries.order(created_at: :desc)
     when :approved
-      Documentary.where(approved: true)
+      @documentaries.where(approved: true)
     when :top
-      Documentary.order(backers: :desc)
+      @documentaries.order(backers: :desc)
     when :completed
-      Documentary.where(percent_funded: 100)
+      @documentaries.where(percent_funded: 100)
     end
+
+    @documentaries = @documentaries.where(genres: {title: params[:genre]}) if params[:genre]
   end
 
   def new
