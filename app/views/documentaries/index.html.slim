@@ -2,6 +2,22 @@ h1
   | Projects
 
 
+ul.nav.nav-tabs
+  li role="presentation" class="#{ is_active?(params[:type], :new) }"
+    = link_to documentaries_path(type: :new) do
+      | New Projects
+  li role="presentation" class="#{ is_active?(params[:type], :approved) }"
+    = link_to documentaries_path(type: :approved) do
+      | ONF/NFB Approved
+  li role="presentation" class="#{ is_active?(params[:type], :top) }"
+    = link_to documentaries_path(type: :top) do
+      | Top likes
+  li role="presentation" class="#{ is_active?(params[:type], :completed) }"
+    = link_to documentaries_path(type: :completed) do
+      | Completed
+
+br
+
 - @documentaries.each do |documentary|
   .panel.panel-default
     .panel-heading
@@ -11,8 +27,10 @@ h1
         .col-xs-2
           .thumbnail
             = link_to(image_tag(documentary.thumbnail_url, :size => "121x110"), documentary_path(documentary.id))
-        .col-xs-10
+        .col-xs-8
           = documentary.short_synopsis
+        .col-xs-2
+          = documentary.genres.map(&:title).first.humanize
     .panel-footer
       .row
         .col-xs-4

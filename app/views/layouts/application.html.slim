@@ -76,7 +76,7 @@ html lang="en"
             ul.nav.nav-pills.nav-stacked
               - all_genres.each do |genre|
                 li class="#{ params[:genre] == genre.title.underscore ? "active" : nil }"
-                  = link_to genre.title.humanize, "?genre=%s" % genre.title
+                  = link_to genre.title.humanize, genre: genre.title, type: params[:type]
 
       footer
         p &copy; NFB/ONF 2015
