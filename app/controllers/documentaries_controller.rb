@@ -33,6 +33,7 @@ class DocumentariesController < ApplicationController
   def show
     @documentary= Documentary.find(params[:id])
     @avatar= Faker::Avatar.image("random", "40x40")
+    @item_image= Faker::Avatar.image("item", "100x100")
   end
 
   private
