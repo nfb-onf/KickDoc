@@ -1,5 +1,5 @@
 h1
-  | Documentary#index
+  | Projects
 
 .row
   - @documentaries.each do |documentary|
@@ -13,8 +13,7 @@ h1
         .i.fa.fa-hand-o-up = documentary.backers
         .i.fa.fa-clock-o = documentary.expired_at
         .progress
-          .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded = documentary.percent_funded
+          .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{documentary.percent_funded}%;"
+            = "%s %" % documentary.percent_funded
 
 
-p
-  | Find me in app/views/choose_documentary/_choose.html.slim
