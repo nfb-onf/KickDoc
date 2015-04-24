@@ -68,15 +68,11 @@ html lang="en"
 
     .container
       .row
-        .col-lg-9
+        div class="#{current_page?(documentaries_url) && !all_genres.blank? ? "col-lg-9" : "col-lg-12"}"
           = bootstrap_flash
           = yield
-        .col-lg-3
-          .well.sidebar-nav
-            ul.nav.nav-pills.nav-stacked
-              - all_genres.each do |genre|
-                li class="#{ params[:genre] == genre.title.underscore ? "active" : nil }"
-                  = link_to genre.title.humanize, genre: genre.title, type: params[:type], status: params[:status]
+
+        = yield(:right_panel)
 
       footer
         p &copy; NFB/ONF 2015
