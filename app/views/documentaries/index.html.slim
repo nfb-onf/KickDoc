@@ -48,3 +48,15 @@ br
           .progress
             .progress-bar role="progressbar" aria-valuenow=documentary.percent_funded aria-valuemin="0" aria-valuemax="100" style="width: #{documentary.percent_funded}%;"
               = "%s %" % documentary.percent_funded
+
+- content_for :right_panel do
+  - if current_page?(documentaries_url) && !all_genres.blank?
+    .col-lg-3
+      .well.sidebar-nav style="margin-top: 131px;"
+        ul.nav.nav-pills.nav-stacked
+          - all_genres.each do |genre|
+            li class="#{ params[:genre] == genre.title.underscore ? "active" : nil }"
+              = link_to genre: genre.title, type: params[:type], status: params[:status] do
+                = genre.title.humanize
+                span.badge
+                  = genre.count_documentaries

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def all_genres
-    Genre.all
+    @all_genres ||= @documentaries.map(&:genres).flatten.uniq
   end
 
   def is_active? value, default_value
